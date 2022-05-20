@@ -76,6 +76,16 @@ public class ThreadPoolTest {
             System.out.println("hello!!");
         }, 2000, TimeUnit.MILLISECONDS);
 
+        Thread.sleep(1000);
+    }
+
+    @Test
+    void scheduledExecutor2() throws InterruptedException {
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);
+        executor.scheduleAtFixedRate(() -> {
+            System.out.println("hello!!");
+        }, 2000, 2000, TimeUnit.MILLISECONDS);
+
 
         Thread.sleep(1000);
     }
